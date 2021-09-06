@@ -1,4 +1,4 @@
-
+@import '../../../Styles/variables';
 
 .form__container {
   display: flex;
@@ -27,10 +27,17 @@
     color: blue;
     width: 65%;
     height: 15%;
+    background: none;
     border-radius: 10px;
     font-size: 1.15rem;
-    background: none;
     border: solid 2px;
+    
+  }
+  button:hover{
+    background: $white;
+    border-radius: 12.5px;
+    transition: all 0.2s ease-out ;
+    
   }
   
 }
