@@ -1,11 +1,20 @@
 import React from 'react';
-import { SignUp } from '../../Components/devise/Sign_up';
+
 
 const Page1 = () => {
 
   return (
     <div className="container__home">
-      <SignUp />
+     <h1>PAGE1</h1>
+      <h3>Page1 Content</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni error,
+        delectus neque corrupti ratione expedita iure laborum id fuga molestias
+        reprehenderit ullam voluptatibus accusamus voluptate, consequuntur
+        similique autem ipsum quos quisquam quibusdam necessitatibus porro.
+        Commodi facere consequatur explicabo. Magnam, ut quaerat dolorem eveniet
+        illo dolor quisquam doloribus? Quo, facilis rem?
+      </p> 
     </div>
   );
 };
