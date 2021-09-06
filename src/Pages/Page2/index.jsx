@@ -1,5 +1,4 @@
 import React from "react";
-import { SignIn } from "../../Components/devise/Sign_in";
 
 const Page2 = () => {
   return (
