@@ -6,7 +6,7 @@ import Header from "./Components/Header";
 import './Styles/reset.scss';
 import './Styles/main.scss';
 import Home from "./Pages/Home";
-import Annonce from "./Pages/Annonce";
+import Annonce from "./Pages/Add";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 import Page3 from "./Pages/Page3";

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 
-const Annonce = () => {
+const Add = () => {
   const { annonceSlug } = useParams();
 
   return (
@@ -12,4 +12,4 @@ const Annonce = () => {
   );
 };
 
-export default Annonce;
+export default Add;
