@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.container__footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: $padding;
+  border-top: $border;
+
+  ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: $padding;
+  }
+
+  li {
+    display: grid;
+    place-items: center;
+  }
+}
