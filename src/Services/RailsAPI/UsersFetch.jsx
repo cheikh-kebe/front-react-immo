@@ -10,44 +10,47 @@ const registerToken =(token)=>{
 
 }
 
+  const config= {
+    headers: {
+      "Content-Type": "application/json"
+    },
+  };
+
+
 export default class APIManager {
   static async register(email, password) {
-    API.interceptors.request.use(({ headers, ...config }) => ({
-      ...config,
-      headers: {
-        ...headers,
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${
-          headers.Authorization || Cookies.get("token")
-        }`,
-      },
-    }));
-    
-
-    const response = await API.post("/users", { user: { email, password } });
+  
+    const response = await API.post("/users", { user: { email, password } }, config);
+  
     let token = await response.headers.authorization;
-    token? registerToken(token) : Cookies.set("isLogged?", "false")
+    console.log(response)
     
+    token? registerToken(token) : Cookies.set("isLogged?", "false")
+    this.login(email,password)
     return response;
   
   
   }
   static async logout() {
-    const response = await API.delete("/logout");
+    const authorizedConfig= {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${
+          Cookies.get("token")
+          }`
+      },
+    };
+    const response = await API.delete("/users/sign_out", authorizedConfig);
+    Cookies.remove("token");
     return response;
   }
   
   static async login(email, password) {
-    API.interceptors.request.use(({ headers, ...config }) => ({
-      ...config,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }));
-    const response = await API.post("/users/sign_in", { user: { email, password } });
+
+    const response = await API.post("/users/sign_in", {  user: { email, password } }, config);
     let token = await response.headers.authorization;
+    console.log(response)
     token? registerToken(token) : Cookies.set("isLogged?", "false")
     return response;
   }
-
 }
