@@ -6,7 +6,7 @@ import Header from "./Components/Header";
 import './Styles/reset.scss';
 import './Styles/main.scss';
 import Home from "./Pages/Home";
-import Annonce from "./Pages/Add";
+import Add from "./Pages/Add";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 import Page3 from "./Pages/Page3";
@@ -21,7 +21,7 @@ const App = () => {
         <main className="main__content">
           <Switch>
             <Route path="/" exact render={() => <Home/>}/>
-            <Route path="/annonces/:annonceSlug" render={() => <Annonce key={uuidv4()}/>}/>
+            <Route path="/annonces/:annonceSlug" render={() => <Add key={uuidv4()}/>}/>
             <Route path="/page1" render={() => <Page1/>}/>
             <Route path="/page2" render={() => <Page2/>}/>
             <Route path="/page3" render={() => <Page3/>}/>
