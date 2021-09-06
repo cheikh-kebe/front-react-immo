@@ -2,15 +2,19 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Header from "./Components/Header";
+//styles
 import './Styles/reset.scss';
 import './Styles/main.scss';
+//components
+import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import Add from "./Pages/Add";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 import Page3 from "./Pages/Page3";
 import Footer from "./Components/Footer";
+import { SignupPage } from "./Pages/SignUpPage";
+import { SignInPage } from "./Pages/SignInPage";
 
 const App = () => {
 
@@ -25,6 +29,8 @@ const App = () => {
             <Route path="/page1" render={() => <Page1/>}/>
             <Route path="/page2" render={() => <Page2/>}/>
             <Route path="/page3" render={() => <Page3/>}/>
+            <Route path="/sign_up" render={() => <SignupPage/>}/>
+            <Route path="/sign_in" render={() => <SignInPage/>}/>
           </Switch>
         </main>
         <Footer/>

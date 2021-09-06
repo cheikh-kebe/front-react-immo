@@ -11,6 +11,8 @@ const Header = () => {
         <li><Link to="/page1">PAGE 1</Link></li>
         <li><Link to="/page2">PAGE 2</Link></li>
         <li><Link to="/page3">PAGE 3</Link></li>
+        <li><Link to="/sign_up">SIGN-UP</Link></li>
+        <li><Link to="/sign_in">SIGN-IN</Link></li>
       </ul>
     </header>
   );
