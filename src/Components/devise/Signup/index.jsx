@@ -1,25 +1,26 @@
-import React, { useState } from 'react'
-import Cookies from 'js-cookie'
+import React, { useState} from 'react'
 import APIManager from '../../../Services/RailsAPI/UsersFetch';
 import './sign_up.scss';
 import { useHistory} from "react-router-dom";
-
+import { useDispatch} from 'react-redux';
+import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from '../../../Store';
 export const SignUp = () => {
   const history = useHistory();
   const [email, setEmail]       = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch()
+  
 
-  const value = {
-    email   : email,
-    password: password
-  };
-  console.log(value)
-
-  const handleSubmit = async (e) => {
+  const SignUp = async (e) => {
     e.preventDefault();
+  
     const response = await APIManager.register(email, password);
-    let isLogged = Cookies.get("isLogged?") 
+    response.status === 200? dispatch(RegisterUserLoginStatus()):dispatch(RegisterUserLogoutStatus());
+
+  
+
     history.goBack()
+    return response
  };
   return (
     <>
@@ -45,7 +46,7 @@ export const SignUp = () => {
         />
         </label>
         
-        <button type="submit" onClick={handleSubmit}>S'inscrire</button>
+        <button type="submit" onClick={SignUp}>S'inscrire</button>
       </form>
     </div>
     </>
