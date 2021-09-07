@@ -14,8 +14,7 @@ const LoggedUserReducer = (state = initialUserState, action) => {
       }
     case REGISTER_USER_LOGOUT_STATUS:
       return {
-        ...state,
-        isLogged: false
+        state: undefined
     }
 
     default:

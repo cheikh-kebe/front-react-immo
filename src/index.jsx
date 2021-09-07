@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 //styles
 import './Styles/reset.scss';
@@ -19,7 +19,7 @@ import { Provider } from 'react-redux';
 import { store, persistor } from "./Store/store";
 import { PersistGate } from 'redux-persist/integration/react'
 import {useSelector} from 'react-redux';
-import {CreateAd} from './Pages/CreateAd'
+import CreateAd from "./Pages/CreateAd";
 const App = () => {
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -31,7 +31,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         isLogged ? (
           <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: "/login" }} />
+          <Redirect to={{ pathname: "/sign_in" }} />
         )
       }
     />
