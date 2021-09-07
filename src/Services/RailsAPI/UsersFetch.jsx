@@ -17,7 +17,7 @@ const config = {
 };
 
 
-export default class APIManager {
+export default class APIAdsManager {
   static async register(email, password) {
     const response = await API.post(
       "/users",

@@ -19,11 +19,12 @@ import { Provider } from 'react-redux';
 import { store, persistor } from "./Store/store";
 import { PersistGate } from 'redux-persist/integration/react'
 import {useSelector} from 'react-redux';
-import CreateAd from "./Pages/CreateAd";
+import NewAd from "./Pages/NewAd";
 const App = () => {
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  const isLogged = useSelector(state => state.user.logged)
+  const isLogged = useSelector(state => state.user.isLogged)
+  console.log(isLogged)
   return (
     <Route
       {...rest}
@@ -46,7 +47,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <Header/>
         <main className="main__content">
           <Switch>
-            <PrivateRoute path="/new_ad" component={CreateAd} />
+            <PrivateRoute path="/nouvelle_annonce" component={NewAd} />
             <Route path="/" exact render={() => <Home/>}/>
             <Route path="/annonces/:annonceSlug" render={() => <Add key={uuidv4()}/>}/>
             <Route path="/page1" render={() => <Page1/>}/>
