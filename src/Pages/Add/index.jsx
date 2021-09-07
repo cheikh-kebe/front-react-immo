@@ -1,13 +1,18 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import GetAds from '../../services/GetAds';
 
 const Add = () => {
   const { annonceSlug } = useParams();
-
+  console.log( {annonceSlug} )
+  const {data} = GetAds('http://localhost:3000/real_estate_ads/' + annonceSlug)
   return (
     <div className="container__annonce">
-      <h1>{annonceSlug}</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit ad nihil fugiat vel fuga facilis exercitationem, sunt in illo reprehenderit id alias soluta blanditiis!</p>
+      {data && <div>
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
+        <em>{data.city}</em>
+      </div>}
     </div>
   );
 };
