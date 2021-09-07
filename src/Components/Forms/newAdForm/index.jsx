@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import APIAdsManager from '../../../Services/RailsAPI/AdsFetch';
+import React, { useState } from 'react';
+import APIAdsManager from '../../../services/RailsAPI/AdsFetch';
 import { useHistory} from "react-router-dom";
 
 export const NewAdForm = () => {
@@ -50,7 +50,6 @@ export const NewAdForm = () => {
         />
         </label>
         <button onClick={CreateAd} >Créer l'annonce</button>
-        <button onClick={()=>console.log(adCreated)} >Créer l'annonce</button>
     </form>
     </div>
     </div>

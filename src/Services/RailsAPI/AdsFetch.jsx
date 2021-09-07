@@ -5,7 +5,7 @@ import axios from "axios";
 const API = axios.create({ baseURL: API_URL });
 
 
-export default class APIManager {
+export default class APIAdsManager {
   
   static async createRealEstateAd(title,description, price, city) {
     const authorizedConfig = {

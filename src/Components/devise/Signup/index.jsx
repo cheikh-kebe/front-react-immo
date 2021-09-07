@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import APIManager from '../../../Services/RailsAPI/UsersFetch';
+import APIManager from '../../../services/RailsAPI/UsersFetch';
 import './sign_up.scss';
 import { useHistory} from "react-router-dom";
 import { useDispatch} from 'react-redux';
