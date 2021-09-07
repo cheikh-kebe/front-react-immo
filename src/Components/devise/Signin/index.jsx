@@ -20,14 +20,15 @@ export const SignIn = () => {
     response.status === 200? dispatch(RegisterUserLoginStatus()):dispatch(RegisterUserLogoutStatus());
     history.goBack()
  };
- const logout = async (e) => {
-  e.preventDefault();
-  const response = await APIManager.logout();
-  console.log(response)
-  response.status === 200? dispatch(RegisterUserLogoutStatus()):dispatch(RegisterUserLoginStatus());
-  history.push('/')
-};
 
+  const logout = async (e) => {
+   e.preventDefault();
+   const response = await APIManager.logout();
+   console.log(response)
+   response.status === 200? dispatch(RegisterUserLogoutStatus()):dispatch(RegisterUserLoginStatus());
+   history.push('/')
+  ;
+  }
   return (
     <div className="form__container">
       <form /*</div>onSubmit={fetchRegister}*/>
