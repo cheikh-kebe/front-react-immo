@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Styles
 import './sign_in.scss';
-import APIManager from '../../../Services/RailsAPI/UsersFetch';
+import APIManager from '../../../services/RailsAPI/UsersFetch';
 import { useHistory} from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from '../../../Store';
