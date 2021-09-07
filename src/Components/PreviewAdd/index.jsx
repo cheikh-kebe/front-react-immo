@@ -2,7 +2,6 @@ import React from "react";
 import '../PreviewAdd/previewAdd.scss';
 
 const PreviewAdd = ({estate}) => {
-
   return (
     <div className="container__add--preview">
       <div className="head--img">
@@ -13,6 +12,8 @@ const PreviewAdd = ({estate}) => {
           <strong>{estate.title}</strong>
           <br/>
           {estate.description}
+          <br/>
+          <em>{estate.city}</em>
         </div>
         <div className="price">{estate.price}€</div>
       </div>

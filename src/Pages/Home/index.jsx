@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PreviewAdd from '../../Components/PreviewAdd';
-import '../Add/add.scss';
-import getAds from '../../services/GetAds';
+import './home.scss';
+import GetAds from '../../services/GetAds';
 
 const Home = () => {
-  const {data} = getAds('http://localhost:3000/real_estate_ad/index') //error, loading
-  console.log(data)
+  const {data} = GetAds('http://localhost:3000/real_estate_ads') //error, loading
   return (
     <div className="container__home">
       <h1>HOME</h1>
@@ -14,7 +13,7 @@ const Home = () => {
       <ul className="container__all__adds--preview">
         {data && data.map((estate) => (
           <li key = {estate.id}>
-          <Link to="/annonces/annonce1">
+          <Link to={`/annonces/${estate.id}`}>
             <PreviewAdd estate = {estate}/>
           </Link>
         </li>
