@@ -15,10 +15,12 @@ import Page3 from "./Pages/Page3";
 import Footer from "./Components/Footer";
 import { SignupPage } from "./Pages/SignUpPage";
 import { SignInPage } from "./Pages/SignInPage";
-
+import { Provider } from 'react-redux';
+import { store } from "./Store/store";
 const App = () => {
 
   return (
+  <Provider store={store}>
     <Router>
       <div className="container__all">
         <Header/>
@@ -36,6 +38,7 @@ const App = () => {
         <Footer/>
       </div>
     </Router>
+    </Provider>
   );
 };
 

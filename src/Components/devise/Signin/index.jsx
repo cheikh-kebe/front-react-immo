@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 // Styles
 import './sign_in.scss';
-import Cookies from 'js-cookie'
 import APIManager from '../../../Services/RailsAPI/UsersFetch';
 import { useHistory} from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from '../../../Store';
 
 
 export const SignIn = () => {
+  const dispatch = useDispatch()
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const value = {
-    email: email,
-    password: password
-  };
 
   const login = async (e) => {
     e.preventDefault();
     const response = await APIManager.login(email, password);
+    response.status === 200? dispatch(RegisterUserLoginStatus()):dispatch(RegisterUserLogoutStatus());
     history.goBack()
  };
  const logout = async (e) => {
   e.preventDefault();
   const response = await APIManager.logout();
-  history.goBack()
+  console.log(response)
+  response.status === 200? dispatch(RegisterUserLogoutStatus()):dispatch(RegisterUserLoginStatus());
+  history.push('/')
 };
 
   return (
