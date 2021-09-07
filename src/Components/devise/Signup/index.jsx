@@ -1,9 +1,10 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState} from 'react'
 import APIManager from '../../../Services/RailsAPI/UsersFetch';
 import './sign_up.scss';
 import { useHistory} from "react-router-dom";
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from '../../../Store';
+
 export const SignUp = () => {
   const history = useHistory();
   const [email, setEmail]       = useState("");
@@ -38,7 +39,6 @@ export const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         </label>
-        
         <button type="submit" onClick={SignUp}>S'inscrire</button>
       </form>
     </div>

@@ -18,9 +18,25 @@ import { SignInPage } from "./Pages/SignInPage";
 import { Provider } from 'react-redux';
 import { store, persistor } from "./Store/store";
 import { PersistGate } from 'redux-persist/integration/react'
-
+import {useSelector} from 'react-redux';
+import {CreateAd} from './Pages/CreateAd'
 const App = () => {
 
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  const isLogged = useSelector(state => state.user.logged)
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        isLogged ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/login" }} />
+        )
+      }
+    />
+  );
+};
   return (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
@@ -30,6 +46,7 @@ const App = () => {
         <Header/>
         <main className="main__content">
           <Switch>
+            <PrivateRoute path="/new_ad" component={CreateAd} />
             <Route path="/" exact render={() => <Home/>}/>
             <Route path="/annonces/:annonceSlug" render={() => <Add key={uuidv4()}/>}/>
             <Route path="/page1" render={() => <Page1/>}/>
