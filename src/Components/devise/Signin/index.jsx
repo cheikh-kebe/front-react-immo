@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 // Styles
 import './sign_in.scss';
+import Cookies from 'js-cookie'
+import APIManager from '../../../Services/RailsAPI/UsersFetch';
+import { useHistory} from "react-router-dom";
+
 
 export const SignIn = () => {
-
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,6 +15,17 @@ export const SignIn = () => {
     email: email,
     password: password
   };
+
+  const login = async (e) => {
+    e.preventDefault();
+    const response = await APIManager.login(email, password);
+    history.goBack()
+ };
+ const logout = async (e) => {
+  e.preventDefault();
+  const response = await APIManager.logout();
+  history.goBack()
+};
 
   return (
     <div className="form__container">
@@ -33,7 +48,8 @@ export const SignIn = () => {
         />
         </label>
         
-        <button type="submit">Se Connecter</button>
+        <button type="submit" onClick={login}>Se Connecter</button>
+        <button type="submit" onClick={logout}>Se déconnecter</button>
       </form>
     </div>
   )
