@@ -4,7 +4,7 @@ import { Checkbox, Divider } from 'antd';
 import '../Checkboxes/checkboxes.scss';
 
 const CheckboxGroup = Checkbox.Group;
-const plainOptions = ['Apple', 'Pear', 'Orange'];
+const plainOptions = ['Paris', 'Bordeaux', 'Marseille'];
 const defaultCheckedList = [];
 
 const Checkboxes = () => {
@@ -27,7 +27,7 @@ const Checkboxes = () => {
   return (
     <div className="container__checkboxes">
       <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
-        Check all
+        Toutes les villes
       </Checkbox>
       <CheckboxGroup options={plainOptions} value={checkedList} onChange={onChange} />
     </div>
