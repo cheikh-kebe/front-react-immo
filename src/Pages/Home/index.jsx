@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FilterSystem from '../../Components/FilterSystem';
+import HeroBanner from '../../Components/HeroBanner';
 import PreviewAdd from '../../Components/PreviewAdd';
-import '../Add/add.scss';
+import '../Home/home.scss';
 
 const Home = () => {
 
   return (
     <div className="container__home">
-      <h1>HOME</h1>
-      <h3>Voici la liste des annonces</h3>
+      <HeroBanner />
+      <FilterSystem />
       <ul className="container__all__adds--preview">
         <li>
           <Link to="/annonces/annonce1">

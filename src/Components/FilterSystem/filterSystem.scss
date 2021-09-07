@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.container__filterSystem {
+  margin-top: $padding;
+  padding: 0 $padding;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $padding * 2;
+}
