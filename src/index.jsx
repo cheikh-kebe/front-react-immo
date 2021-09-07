@@ -16,11 +16,15 @@ import Footer from "./Components/Footer";
 import { SignupPage } from "./Pages/SignUpPage";
 import { SignInPage } from "./Pages/SignInPage";
 import { Provider } from 'react-redux';
-import { store } from "./Store/store";
+import { store, persistor } from "./Store/store";
+import { PersistGate } from 'redux-persist/integration/react'
+
 const App = () => {
 
   return (
   <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+
     <Router>
       <div className="container__all">
         <Header/>
@@ -38,6 +42,7 @@ const App = () => {
         <Footer/>
       </div>
     </Router>
+    </PersistGate>
     </Provider>
   );
 };
