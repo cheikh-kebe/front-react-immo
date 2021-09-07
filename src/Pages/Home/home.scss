@@ -1,0 +1,7 @@
+@import '../../Styles/variables.scss';
+
+.container__all__adds--preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $padding;
+}

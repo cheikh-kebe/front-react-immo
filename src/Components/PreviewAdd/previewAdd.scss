@@ -1,0 +1,32 @@
+@import '../../Styles/variables.scss';
+
+.container__add--preview {
+  background-color: $white;
+  border-radius: $padding;
+  overflow: hidden;
+  color: $black;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .content--text {
+    padding: $padding;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    strong {
+      font-weight: 800;
+    }
+
+    .price {
+      display: grid;
+      place-items: center;
+      border: $border;
+      border-radius: $padding / 1.5;
+      padding: $padding / 2 $padding;
+      font-weight: 800;
+    }
+  }
+}
