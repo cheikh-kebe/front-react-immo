@@ -16,7 +16,11 @@ const persistConfig = {
   stateReconciler: autoMergeLevel2,
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
-
-export let store = createStore(persistedReducer, compose(applyMiddleware(thunkMiddleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+export let store
+if (window.navigator.userAgent.includes('Chrome')) {
+store = createStore(persistedReducer, compose(applyMiddleware(thunkMiddleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+}else{
+store = createStore(persistedReducer, compose(applyMiddleware(thunkMiddleware)))
+}
 
 export let persistor = persistStore(store)
