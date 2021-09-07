@@ -1,24 +1,18 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 import APIManager from '../../../Services/RailsAPI/UsersFetch';
 import './sign_up.scss';
 import { useHistory} from "react-router-dom";
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from '../../../Store';
 export const SignUp = () => {
   const history = useHistory();
   const [email, setEmail]       = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch()
-  
-
   const SignUp = async (e) => {
     e.preventDefault();
-  
     const response = await APIManager.register(email, password);
     response.status === 200? dispatch(RegisterUserLoginStatus()):dispatch(RegisterUserLogoutStatus());
-
-  
-
     history.goBack()
     return response
  };
@@ -26,7 +20,7 @@ export const SignUp = () => {
     <>
     <h2>Trouvez la maison de vos rêves! Inscrivez-vous!</h2>
     <div className="form__container">
-      
+      <div>
       <form /*</div>onSubmit={fetchRegister}*/>
         <label>
           Email :
@@ -34,7 +28,6 @@ export const SignUp = () => {
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        
         />
         </label>
         <label>
@@ -48,6 +41,7 @@ export const SignUp = () => {
         
         <button type="submit" onClick={SignUp}>S'inscrire</button>
       </form>
+    </div>
     </div>
     </>
   )

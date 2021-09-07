@@ -38,7 +38,6 @@ export const SignIn = () => {
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        
         />
         </label>
         <label>
@@ -49,7 +48,6 @@ export const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         </label>
-        
         <button type="submit" onClick={login}>Se Connecter</button>
         <button type="submit" onClick={logout}>Se déconnecter</button>
       </form>
