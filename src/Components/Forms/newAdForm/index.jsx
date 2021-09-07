@@ -7,22 +7,16 @@ export const NewAdForm = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
-  const [adCreated, setAdCreated] = useState("23");
-  
   const history = useHistory();
   const CreateAd = async (e) => {
     e.preventDefault();
     const response = await APIAdsManager.createRealEstateAd(title,description, price, city);
     history.push(`/annonces/annonce${response.data.id}`)
-
-    return response
  };
-
-
   return (
     <div>
       <div className="form__container">
-    
+      <form>
         <label>
           Titre :
           <input
@@ -57,8 +51,7 @@ export const NewAdForm = () => {
         </label>
         <button onClick={CreateAd} >Créer l'annonce</button>
         <button onClick={()=>console.log(adCreated)} >Créer l'annonce</button>
-
-  
+    </form>
     </div>
     </div>
   );
