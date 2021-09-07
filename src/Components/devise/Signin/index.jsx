@@ -21,14 +21,7 @@ export const SignIn = () => {
     history.goBack()
  };
 
-  const logout = async (e) => {
-   e.preventDefault();
-   const response = await APIManager.logout();
-   console.log(response)
-   response.status === 200? dispatch(RegisterUserLogoutStatus()):dispatch(RegisterUserLoginStatus());
-   history.push('/')
-  ;
-  }
+
   return (
     <div className="form__container">
       <form /*</div>onSubmit={fetchRegister}*/>
@@ -49,7 +42,6 @@ export const SignIn = () => {
         />
         </label>
         <button type="submit" onClick={login}>Se Connecter</button>
-        <button type="submit" onClick={logout}>Se déconnecter</button>
       </form>
     </div>
   )

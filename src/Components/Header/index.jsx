@@ -23,9 +23,6 @@ const Header = () => {
     <header className="container__header">
       <h1><Link to="/">ImmoCoin</Link></h1>
       <ul>
-        
-        <li><Link to="/page2">PAGE 2</Link></li>
-        <li><Link to="/page3">PAGE 3</Link></li>
         {isLogged?
         <>
         <li><Link to="/nouvelle_annonce">Ajouter une annonce </Link></li>
