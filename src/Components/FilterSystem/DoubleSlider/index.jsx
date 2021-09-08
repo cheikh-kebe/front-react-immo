@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Slider } from 'antd';
 import '../DoubleSlider/doubleSlider.scss';
@@ -7,9 +7,13 @@ const DoubleSlider = () => {
   // const [adds, setAdds] = useState=([])
 
   const onChange = (value) => {
-    console.log('onChange: ', value);
-    // setValue API => UPDATE
+    // console.log('onChange: ', value);
   };
+
+  function onAfterChange(value) {
+    console.log('onAfterChange: ', value);
+    // setValue API => UPDATE
+  }
 
   return (
     <div className="container__slider">
@@ -21,6 +25,7 @@ const DoubleSlider = () => {
         max={1000000}
         defaultValue={[100000, 500000]}
         onChange={onChange}
+        onAfterChange={onAfterChange}
       />
     </div>
   );
