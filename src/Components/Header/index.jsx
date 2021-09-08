@@ -13,9 +13,10 @@ const Header = () => {
   const dispatch = useDispatch()
   const logout = async (e) => {
     e.preventDefault();
+    dispatch(RegisterUserLogoutStatus())
     const response = await APIManager.logout();
     console.log(response)
-    response.status === 200? dispatch(RegisterUserLogoutStatus()):dispatch(RegisterUserLoginStatus());
+    
     history.push('/')
    ;
    }

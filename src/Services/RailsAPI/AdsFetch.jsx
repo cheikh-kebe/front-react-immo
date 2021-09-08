@@ -7,16 +7,24 @@ const API = axios.create({ baseURL: API_URL });
 
 export default class APIAdsManager {
   
-  static async createRealEstateAd(title,description, price, city) {
+  static async createRealEstateAd(title,description, price, city, image) {
     const authorizedConfig = {
       headers: {
-        "Content-Type": "application/json",
+        Accept:'application/json',
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
     };
-    const response = await API.delete(
+    var data = new FormData();
+    data.append('title',title);
+    data.append('description',description);
+    data.append('price',price);
+    data.append('image', image)
+    data.append('city',city);
+  
+
+    const response = await API.post(
       "/real_estate_ads",
-      {title,description, price, city},
+      data,
       authorizedConfig
     );
     return response;
