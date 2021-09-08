@@ -20,6 +20,7 @@ import { store, persistor } from "./Store/store";
 import { PersistGate } from 'redux-persist/integration/react'
 import {useSelector} from 'react-redux';
 import NewAd from "./Pages/NewAd";
+import { MyAds} from "./Pages/MyAds";
 const App = () => {
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -48,6 +49,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <main className="main__content">
           <Switch>
             <PrivateRoute path="/nouvelle_annonce" component={NewAd} />
+            <PrivateRoute path="/mes_annonces" component={MyAds} />
             <Route path="/" exact render={() => <Home/>}/>
             <Route path="/annonces/:annonceSlug" render={() => <Add key={uuidv4()}/>}/>
             <Route path="/page1" render={() => <Page1/>}/>

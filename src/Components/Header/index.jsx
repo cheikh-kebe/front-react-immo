@@ -26,6 +26,7 @@ const Header = () => {
         {isLogged?
         <>
         <li><Link to="/nouvelle_annonce">Ajouter une annonce </Link></li>
+        <li><Link to="/mes_annonces">Mes annonces </Link></li>
         <button type="submit" onClick={logout}>Se déconnecter</button>
         </>
         :
