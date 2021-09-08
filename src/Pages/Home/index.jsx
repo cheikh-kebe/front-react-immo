@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PreviewAdd from '../../Components/PreviewAdd';
 import './home.scss';
-import GetAds from '../../services/GetAds';
+import GetAds from '../../Services/GetAds';
 
 const Home = () => {
   const {data} = GetAds('http://localhost:3000/real_estate_ads') //error, loading

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import GetAds from '../../services/GetAds';
+import GetAds from '../../Services/GetAds';
 
 const AdShow = () => {
   const { annonceSlug } = useParams();
