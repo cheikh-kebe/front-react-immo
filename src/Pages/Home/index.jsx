@@ -1,9 +1,13 @@
+//react- router - redux 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+//components
 import FilterSystem from '../../Components/FilterSystem';
 import HeroBanner from '../../Components/HeroBanner';
 import PreviewAdd from '../../Components/PreviewAdd';
+//styles
 import './home.scss';
+//api
 import GetAds from '../../Services/RailsAPI/GetAds';
 
 const Home = () => {
@@ -15,7 +19,7 @@ const Home = () => {
     setAllEstate(data);
     setAllEstateToDisplay(allEstate);
   }, [data, allEstate]);
-
+  
   return (
     <div className="container__home">
       <HeroBanner />
