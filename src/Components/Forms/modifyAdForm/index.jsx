@@ -1,20 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import APIAdsManager from '../../../Services/RailsAPI/AdsFetch';
 import { useHistory} from "react-router-dom";
+import GetAds from '../../../Services/RailsAPI/GetAds';
+import { useParams } from 'react-router-dom';
 
-export const NewAdForm = () => {
+  
+
+export const ModifyAdForm = () => {
+  const { annonceSlug } = useParams();
+  const URL = 'http://localhost:3000/real_estate_ads/'+ annonceSlug
+  console.log(URL)
+  const {data} = GetAds(URL)
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [city, setCity] = useState("");
-  const [image, setImage] = useState("")
+    const [description, setDescription] = useState("");
+    const [price, setPrice] = useState("");
+    const [city, setCity] = useState("");
+  
+    useEffect(() => {
+    setTitle(data.title)
+  
+  }, [data]);
+  
+  
+  
   const history = useHistory();
   const CreateAd = async (e) => {
     e.preventDefault();
-    const response = await APIAdsManager.createRealEstateAd(title,description, price, city, image);
+    const response = await APIAdsManager.createRealEstateAd(title,description, price, city); //TODO:methode update à faire
     Promise.resolve(response)
     history.push(`/annonces/${response.data.id}`)
  };
+
+
+//const onUpdateInput = (updatedNote) => {
+// const updatedNotesArray = notes.map((note) => {
+//   if (note.id === activeNote) {
+//     return updatedNote;
+//   }
+//   return note;
+// });
+// setNotes(updatedNotesArray);
+//;
   return (
     <div>
       <div className="form__container">
@@ -49,14 +75,6 @@ export const NewAdForm = () => {
           type="text"
           value={city}
           onChange={(e) => setCity(e.target.value)}
-        />
-        </label>
-        <label>
-          Image :
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setImage(e.target.files[0])}
         />
         </label>
         <button onClick={CreateAd} >Créer l'annonce</button>

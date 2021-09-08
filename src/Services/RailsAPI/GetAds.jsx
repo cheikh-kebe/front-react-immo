@@ -14,6 +14,7 @@ const GetAds = (URL) => {
                    }});
 
             console.log(res)
+            console.log("hey")
             if (res.status === 200) {
                 const data = await res.json();
                 setData(data);
@@ -24,8 +25,8 @@ const GetAds = (URL) => {
         }
       }
       fetchData();
-    },[URL])
-    return { data }
+    },[])
+    return  data 
 }
 
 export default GetAds
