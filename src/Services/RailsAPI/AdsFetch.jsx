@@ -43,7 +43,7 @@ export default class APIAdsManager {
     return response;
   }
 
-  static async updateRealEstateAd(id,title,description, price, city) {
+  static async updateRealEstateAd(id,title,description, price, city, image) {
     const authorizedConfig = {
       headers: {
         Accept:'application/json',
@@ -54,7 +54,7 @@ export default class APIAdsManager {
     data.append('title',title);
     data.append('description',description);
     data.append('price',price);
-    //data.append('image', image)
+    if (image)(data.append('image', image))
     data.append('city',city);
   
 

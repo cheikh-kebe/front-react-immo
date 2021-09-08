@@ -25,7 +25,7 @@ export const SignIn = () => {
 
   return (
     <div className="form__container">
-      <form /*</div>onSubmit={fetchRegister}*/>
+      <form>
         <label>
           Email :
           <input

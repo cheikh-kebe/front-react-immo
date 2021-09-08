@@ -15,7 +15,7 @@ export const ModifyAdForm = () => {
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
   const [id, setId] = useState("");
-  
+  const [image, setImage] = useState("");
    useEffect(() => {
      getData()
  }, []);
@@ -28,14 +28,14 @@ export const ModifyAdForm = () => {
   setPrice(data.price)
   setCity(data.city)
   setId(data.id)
+  setImage(data.image)
    }
  
   const history = useHistory();
 
   const UpdateAd = async (e) => {
     e.preventDefault();
-    //setId(data.id)
-    const response = await APIAdsManager.updateRealEstateAd(id,title,description, price, city);
+    const response = await APIAdsManager.updateRealEstateAd(id,title,description, price, city, image);
     Promise.resolve(response)
     history.push(`/annonces/${id}`)
  };
@@ -77,7 +77,15 @@ export const ModifyAdForm = () => {
           onChange={(e) => setCity(e.target.value)}
         />
         </label>
-        <button onClick={UpdateAd} >Modifier l'annonce</button>
+        <label>
+          Image :
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+        </label>
+        <button onClick={UpdateAd}>Modifier l'annonce</button>
     </form>
     </div>
     </div>
