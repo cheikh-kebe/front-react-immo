@@ -7,7 +7,7 @@ import './home.scss';
 import GetAds from '../../Services/RailsAPI/GetAds';
 
 const Home = () => {
-  const {data} = GetAds('http://localhost:3000/real_estate_ads') //error, loading
+  const { data } = GetAds('http://localhost:3000/real_estate_ads') //error, loading
   const [allEstate, setAllEstate] = useState([]);
   const [allEstateToDisplay, setAllEstateToDisplay] = useState([]);
 
@@ -19,13 +19,13 @@ const Home = () => {
   return (
     <div className="container__home">
       <HeroBanner />
-      <FilterSystem />
+      <FilterSystem allEstateToDisplay={allEstateToDisplay}/>
       <ul className="container__all__adds--preview">
         {allEstateToDisplay && allEstateToDisplay.sort((a, b) => a.price - b.price).map((estate) => (
           <li key = {estate.id}>
-          <Link to={`/annonces/${estate.id}`}>
-            <PreviewAdd estate = {estate}/>
-          </Link>
+            <Link to={`/annonces/${estate.id}`}>
+              <PreviewAdd estate = {estate}/>
+            </Link>
         </li>
         ))}
       </ul>

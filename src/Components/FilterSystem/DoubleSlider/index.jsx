@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import 'antd/dist/antd.css';
 import { Slider } from 'antd';
 import '../DoubleSlider/doubleSlider.scss';
 
-const DoubleSlider = () => {
-  // const [adds, setAdds] = useState=([])
+const DoubleSlider = ({ allEstateToDisplay }) => {
+  const [ads, setAds] = useState([]);
+
+  useEffect(() => {
+    setAds(allEstateToDisplay);
+  }, [allEstateToDisplay]);
 
   const onChange = (value) => {
-    // console.log('onChange: ', value);
+   // console.log('onChange: ', value);
   };
 
-  function onAfterChange(value) {
+  const onAfterChange = useCallback(value => {
+    setAds(allEstateToDisplay);
     console.log('onAfterChange: ', value);
-    // setValue API => UPDATE
-  }
+    setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
+    console.log(ads);
+  }, [ads])
 
   return (
     <div className="container__slider">
