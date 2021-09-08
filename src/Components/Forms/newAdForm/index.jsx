@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import APIAdsManager from '../../../services/RailsAPI/AdsFetch';
+import APIAdsManager from '../../../Services/RailsAPI/AdsFetch';
 import { useHistory} from "react-router-dom";
 
 export const NewAdForm = () => {

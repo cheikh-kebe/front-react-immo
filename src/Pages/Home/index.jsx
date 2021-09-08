@@ -4,7 +4,7 @@ import FilterSystem from '../../Components/FilterSystem';
 import HeroBanner from '../../Components/HeroBanner';
 import PreviewAdd from '../../Components/PreviewAdd';
 import './home.scss';
-import GetAds from '../../services/GetAds';
+import GetAds from '../../Services/RailsAPI/GetAds';
 
 const Home = () => {
   const {data} = GetAds('http://localhost:3000/real_estate_ads') //error, loading
