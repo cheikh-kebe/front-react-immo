@@ -1,8 +1,7 @@
 import React from "react";
 import '../PreviewAdd/previewAdd.scss';
 
-const PreviewAdd = () => {
-
+const PreviewAdd = ({estate}) => {
   return (
     <div className="container__add--preview">
       <div className="head--img">
@@ -10,11 +9,13 @@ const PreviewAdd = () => {
       </div>
       <div className="content--text">
         <div className="adress">
-          <strong>63 Rue des Thermes</strong>
+          <strong>{estate.title}</strong>
           <br/>
-          95880 Enghien-les-Bains
+          {estate.description}
+          <br/>
+          <em>{estate.city}</em>
         </div>
-        <div className="price">750 000€</div>
+        <div className="price">{estate.price}€</div>
       </div>
     </div>
   );

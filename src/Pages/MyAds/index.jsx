@@ -1,20 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FilterSystem from '../../Components/FilterSystem';
-import HeroBanner from '../../Components/HeroBanner';
 import PreviewAdd from '../../Components/PreviewAdd';
-import './home.scss';
-import GetAds from '../../services/GetAds';
+import GetAds
+ from '../../services/GetAds';
+export const MyAds = () => {
 
-const Home = () => {
-  const {data} = GetAds('http://localhost:3000/real_estate_ads') //error, loading
+  const {data} = GetAds('http://localhost:3000/real_estate_ads/my_ads')
   return (
     <div className="container__home">
-      <HeroBanner />
-      <FilterSystem />
+      <h3>Mes Annonces</h3>
+        <h3>Voici la liste des annonces</h3>
       <ul className="container__all__adds--preview">
         {data && data.map((estate) => (
           <li key = {estate.id}>
+    
           <Link to={`/annonces/${estate.id}`}>
             <PreviewAdd estate = {estate}/>
           </Link>
@@ -22,7 +21,6 @@ const Home = () => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Home
