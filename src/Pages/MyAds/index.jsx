@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import PreviewAdd from '../../Components/PreviewAdd';
 import GetAds
  from '../../Services/RailsAPI/GetAds';
+ import APIAdsManager from '../../Services/RailsAPI/AdsFetch';
 export const MyAds = () => {
-
+  const DeleteAd = async (e) => {
+    e.preventDefault();
+    const response = await APIAdsManager.deleteRealEstateAd();
+    history.push(`/annonces/mes_annonces`)
+ };
   const {data} = GetAds('http://localhost:3000/real_estate_ads/my_ads')
   return (
     <div className="container__home">
@@ -17,6 +22,7 @@ export const MyAds = () => {
           <Link to={`/annonces/${estate.id}`}>
             <PreviewAdd estate = {estate}/>
           </Link>
+          <button onClick={DeleteAd}></button>
         </li>
         ))}
       </ul>

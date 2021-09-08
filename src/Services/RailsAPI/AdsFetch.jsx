@@ -14,9 +14,22 @@ export default class APIAdsManager {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
     };
-    const response = await API.post(
+    const response = await API.delete(
       "/real_estate_ads",
       {title,description, price, city},
+      authorizedConfig
+    );
+    return response;
+  }
+  static async deleteRealEstateAd(id) {
+    const authorizedConfig = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    };
+    const response = await API.delete(
+      `/real_estate_ads/${id}`,
       authorizedConfig
     );
     return response;
