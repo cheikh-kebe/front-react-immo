@@ -4,7 +4,7 @@ import './header.scss'
 import { useDispatch, useSelector} from 'react-redux';
 import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from "../../Store";
 import { useHistory} from "react-router-dom";
-import APIManager from "../../services/RailsAPI/UsersFetch.jsx";
+import APIManager from "../../Services/RailsAPI/UsersFetch.jsx";
   
 
 const Header = () => {
