@@ -13,7 +13,8 @@ export const SignUp = () => {
   const SignUp = async (e) => {
     e.preventDefault();
     const response = await APIManager.register(email, password);
-    response.status === 200? dispatch(RegisterUserLoginStatus()):dispatch(RegisterUserLogoutStatus());
+    console.log(response.data.user_id)
+    response.status === 200? dispatch(RegisterUserLoginStatus(response.data.user_id)):dispatch(RegisterUserLogoutStatus());
     history.goBack()
     return response
  };

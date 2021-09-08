@@ -33,6 +33,9 @@ const [ads, setAds] =  useState("");
             <PreviewAdd estate = {estate}/>
           </Link>
           <button value={estate.id} onClick={()=>DeleteAd(estate.id)}> supprimer</button>
+          <Link to={`/annonces/${estate.id}/modification`}>
+            <button value={estate.id}> modifier</button>
+          </Link>
         </li>
         ))}
       </ul>
