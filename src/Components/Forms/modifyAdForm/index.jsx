@@ -8,39 +8,39 @@ import { useParams } from 'react-router-dom';
 
 export const ModifyAdForm = () => {
   const { annonceSlug } = useParams();
-  const URL = 'http://localhost:3000/real_estate_ads/'+ annonceSlug
-  console.log(URL)
-  const {data} = GetAds(URL)
+
+
   const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
-    const [city, setCity] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [city, setCity] = useState("");
+  const [id, setId] = useState("");
   
-    useEffect(() => {
-    setTitle(data.title)
-  
-  }, [data]);
-  
-  
-  
+   useEffect(() => {
+     getData()
+ }, []);
+
+ const getData = async() => {
+  const {data} = await APIAdsManager.getAds(annonceSlug)
+  console.log(data)
+  setTitle(data.title)
+  setDescription(data.description)
+  setPrice(data.price)
+  setCity(data.city)
+  setId(data.id)
+   }
+ 
   const history = useHistory();
-  const CreateAd = async (e) => {
+
+  const UpdateAd = async (e) => {
     e.preventDefault();
-    const response = await APIAdsManager.createRealEstateAd(title,description, price, city); //TODO:methode update à faire
+    //setId(data.id)
+    const response = await APIAdsManager.updateRealEstateAd(id,title,description, price, city);
     Promise.resolve(response)
-    history.push(`/annonces/${response.data.id}`)
+    history.push(`/annonces/${id}`)
  };
 
 
-//const onUpdateInput = (updatedNote) => {
-// const updatedNotesArray = notes.map((note) => {
-//   if (note.id === activeNote) {
-//     return updatedNote;
-//   }
-//   return note;
-// });
-// setNotes(updatedNotesArray);
-//;
   return (
     <div>
       <div className="form__container">
@@ -77,7 +77,7 @@ export const ModifyAdForm = () => {
           onChange={(e) => setCity(e.target.value)}
         />
         </label>
-        <button onClick={CreateAd} >Créer l'annonce</button>
+        <button onClick={UpdateAd} >Modifier l'annonce</button>
     </form>
     </div>
     </div>

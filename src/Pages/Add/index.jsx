@@ -5,7 +5,7 @@ import GetAds from '../../Services/RailsAPI/GetAds';
 const AdShow = () => {
   const { annonceSlug } = useParams();
   console.log( {annonceSlug} )
-  const data = GetAds('http://localhost:3000/real_estate_ads/' + annonceSlug)
+  const {data} = GetAds('http://localhost:3000/real_estate_ads/' + annonceSlug)
   console.log(data)
   return (
     <div className="container__annonce">
