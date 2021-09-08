@@ -3,22 +3,23 @@ import 'antd/dist/antd.css';
 import { Slider } from 'antd';
 import '../DoubleSlider/doubleSlider.scss';
 
-const DoubleSlider = ({ allEstateToDisplay }) => {
+const DoubleSlider = ({ allEstateToDisplay, setAllEstateToDisplay }) => {
   const [ads, setAds] = useState([]);
 
   useEffect(() => {
     setAds(allEstateToDisplay);
   }, [allEstateToDisplay]);
 
-  const onChange = (value) => {
-   // console.log('onChange: ', value);
-  };
+  // const onChange = (value) => {
+  //  console.log('onChange: ', value);
+  // };
 
   const onAfterChange = useCallback(value => {
     setAds(allEstateToDisplay);
     console.log('onAfterChange: ', value);
     setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
     console.log(ads);
+    setAllEstateToDisplay(ads);
   }, [ads])
 
   return (
@@ -30,7 +31,7 @@ const DoubleSlider = ({ allEstateToDisplay }) => {
         min={100000}
         max={1000000}
         defaultValue={[100000, 500000]}
-        onChange={onChange}
+        // onChange={onChange}
         onAfterChange={onAfterChange}
       />
     </div>

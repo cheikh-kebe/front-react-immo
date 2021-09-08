@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Checkbox, Divider } from 'antd';
+import { Checkbox } from 'antd';
 import '../Checkboxes/checkboxes.scss';
 
 const CheckboxGroup = Checkbox.Group;

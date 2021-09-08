@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className="container__home">
       <HeroBanner />
-      <FilterSystem allEstateToDisplay={allEstateToDisplay}/>
+      <FilterSystem allEstateToDisplay={allEstateToDisplay} setAllEstateToDisplay={setAllEstateToDisplay}/>
       <ul className="container__all__adds--preview">
         {allEstateToDisplay && allEstateToDisplay.sort((a, b) => a.price - b.price).map((estate) => (
           <li key = {estate.id}>

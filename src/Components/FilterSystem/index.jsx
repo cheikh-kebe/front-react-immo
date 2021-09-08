@@ -3,7 +3,7 @@ import '../FilterSystem/filterSystem.scss';
 import Checkboxes from './Checkboxes';
 import DoubleSlider from './DoubleSlider';
 
-const FilterSystem = ({ allEstateToDisplay }) => {
+const FilterSystem = ({ allEstateToDisplay, setAllEstateToDisplay }) => {
 
   return (
     <div className="container__filterSystem">
