@@ -26,7 +26,7 @@ const GetAds = (URL) => {
       }
       fetchData();
     },[])
-    return  data 
+    return  {data} 
 }
 
 export default GetAds

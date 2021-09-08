@@ -5,7 +5,7 @@ import './home.scss';
 import GetAds from '../../Services/RailsAPI/GetAds';
 
 const Home = () => {
-  const data = GetAds('http://localhost:3000/real_estate_ads') //error, loading
+  const {data} = GetAds('http://localhost:3000/real_estate_ads') //error, loading
   return (
     <div className="container__home">
       <h1>HOME</h1>

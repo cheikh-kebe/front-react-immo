@@ -17,14 +17,15 @@ export const SignIn = () => {
   const login = async (e) => {
     e.preventDefault();
     const response = await APIManager.login(email, password);
-    response.status === 200? dispatch(RegisterUserLoginStatus()):dispatch(RegisterUserLogoutStatus());
+    console.log(response.data.user_id)
+    response.status === 200? dispatch(RegisterUserLoginStatus(response.data.user_id)):dispatch(RegisterUserLogoutStatus());
     history.goBack()
  };
 
 
   return (
     <div className="form__container">
-      <form /*</div>onSubmit={fetchRegister}*/>
+      <form>
         <label>
           Email :
           <input
