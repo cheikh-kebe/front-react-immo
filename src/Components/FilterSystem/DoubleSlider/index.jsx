@@ -4,26 +4,8 @@ import { Slider } from 'antd';
 import '../DoubleSlider/doubleSlider.scss';
 import { FilterContext } from '../../../Context/FilterContext';
 
-
 const DoubleSlider = () => {
-  
   const {onAfterChange} = useContext(FilterContext)
-
-  
-  
-
-  // const onChange = (value) => {
-  //  console.log('onChange: ', value);
-  // };
-
-  //const onAfterChange = useCallback(value => {
-  //  setAds(allEstateToDisplay);
-  //  console.log('onAfterChange: ', value);
-  //  setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
-  //  console.log(ads);
-  //  // setAllEstateToDisplay(ads);
-  //}, [ads])
-
   return (
     <div className="container__slider">
       <label>Prix (100 000€ - 1 000 000€)</label>

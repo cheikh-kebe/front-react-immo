@@ -14,7 +14,6 @@ import { FilterContext } from '../../Context/FilterContext';
 
 const Home = () => {
   const { data } = GetAds('http://localhost:3000/real_estate_ads') //error, loading
-  
   const [allEstateToDisplay, setAllEstateToDisplay] = useState([]);
   const [ads, setAds] = useState([]);
   
@@ -33,8 +32,6 @@ const Home = () => {
     setAds(allEstateToDisplay.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
     console.log(ads);
   },[ads,allEstateToDisplay])
-  
-  
   
   return (
     <FilterContext.Provider value={{ allEstateToDisplay, onAfterChange, setAds}}>
