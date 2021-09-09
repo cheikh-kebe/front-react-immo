@@ -1,5 +1,5 @@
 import React from "react";
-//import '../PreviewAdd/previewAdd.scss';
+import '../PreviewAdd/previewAdd.scss';
 
 const PreviewAdd = ({estate}) => {
 
