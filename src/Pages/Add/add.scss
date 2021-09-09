@@ -1,0 +1,73 @@
+@import '../../Styles/variables.scss';
+
+// .container__all__adds--preview {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-gap: $padding;
+// }
+
+.container__add--show {
+  background-color: $white;
+  border-radius: $padding;
+  padding: 2em;
+  overflow: hidden;
+  color: $black;
+
+  img {
+    width: 100%;
+    display: block;
+    height: auto;
+    padding: $padding;
+  }
+
+  .content--text {
+    padding: $padding;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 14px 50px;
+
+    .summary{
+      display: grid;
+      place-items: center start;
+      grid-row-end: span 2;
+
+      .title{
+        font-size: x-large;
+        font-weight: bold;
+        margin-bottom: 0%;
+      }
+      .city{
+        font-style: italic;
+      }
+    }
+
+    .price {
+      display: grid;
+      text-align: right;
+      //place-items: top end;
+      font-size: x-large;
+      font-weight: lighter;
+      grid-row-end: span 2;
+    }
+
+    .description{
+      display: grid;
+      place-items: top start;
+      grid-row-end: span 2;
+      padding-top: $padding/2;
+    }
+
+    .contact{
+      text-align: right;
+      background-color: $light-grey;
+      border-radius: $padding;
+      padding: $padding/2;
+    
+      .email{
+        place-items: center end;
+        color: $blue;
+        grid-row-end: span 2;
+      }
+    }
+  }
+}

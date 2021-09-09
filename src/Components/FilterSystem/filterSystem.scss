@@ -1,0 +1,20 @@
+@import '../../Styles/variables.scss';
+
+
+.container__filterSystem {
+  padding: $padding;
+  border-bottom: $border;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
+  grid-gap: $padding * 2;
+}
+
+@media screen and (max-width: 900px)
+{
+  .container__filterSystem {
+    grid-auto-flow: row;
+    grid-template-columns: auto;
+    grid-gap: $padding;
+  }
+}
