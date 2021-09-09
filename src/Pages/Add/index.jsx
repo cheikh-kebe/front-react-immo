@@ -1,11 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import GetAds from '../../Services/RailsAPI/GetAds';
 import './add.scss' 
+//api
+import { API_URL } from '../../Config/config';
+import GetAds from '../../Services/RailsAPI/GetAds';
 
 const AdShow = () => {
   const { annonceSlug } = useParams();
+
   const {data} = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/' + annonceSlug)
+
   return (
     <div className="container__add--show">
       {data && <div>

@@ -1,4 +1,5 @@
 //react- router - redux 
+
 import React, { useState, useEffect, useCallback} from 'react';
 import { Link } from 'react-router-dom';
 //components
@@ -9,11 +10,14 @@ import PreviewAdd from '../../Components/PreviewAdd';
 import './home.scss';
 //api
 import GetAds from '../../Services/RailsAPI/GetAds';
+import { API_URL } from '../../Config/config';
 //context
 import { FilterContext } from '../../Context/FilterContext';
 
 const Home = () => {
+
   const { data } = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/') //error, loading
+
   const [allEstateToDisplay, setAllEstateToDisplay] = useState([]);
   const [ads, setAds] = useState([]);
   
