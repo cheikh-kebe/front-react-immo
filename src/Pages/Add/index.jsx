@@ -9,7 +9,7 @@ const AdShow = () => {
   return (
     <div className="container__add--show">
       {data && <div>
-        <div><img src={data.image_path} alt= "image illustrating this real estate listing" ></img></div>
+        <div><img src={data.image_path} alt="illustrating this real estate listing"></img></div>
         <h1>{data.title}</h1>
         <div className= "content--text">
           <p className="price">{data.price}€</p>
