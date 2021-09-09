@@ -1,9 +1,11 @@
+//react - redux - router
 import React, { useState } from 'react';
-// Styles
-import './sign_in.scss';
-import APIManager from '../../../Services/RailsAPI/UsersFetch';
 import { useHistory} from "react-router-dom";
 import { useDispatch } from 'react-redux';
+// Styles
+import './sign_in.scss';
+//api
+import APIManager from '../../../Services/RailsAPI/UsersFetch';
 import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from '../../../Store';
 
 
