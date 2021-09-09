@@ -3,11 +3,13 @@
 .form__container {
   display: flex;
   justify-content: center;
-  margin: 12%;
+  //margin: 12%;
 
   label{
     color: $blue;
     font-weight: 600;
+    font-size: $font-size;
+    text-align: center;
   }
 
 
@@ -17,6 +19,7 @@
     margin-bottom: 20px;
     border: solid 2px $blue;
     border-radius: 10px;
+    padding: $padding;
   }
 
   button{
@@ -27,8 +30,16 @@
     color: $blue;
     width: 65%;
     height: 15%;
+    background-color: $light-grey;
     border-radius: 10px;
-    font-size: small;
+    font-size: 1.15rem;
+  }
+
+  button:hover{
+    background: $white;
+    border-radius: 12.5px;
+    transition: all 0.2s ease-out ;
   }
   
 }
+

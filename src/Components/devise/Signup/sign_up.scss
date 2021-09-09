@@ -1,43 +1,65 @@
 @import '../../../Styles/variables';
 
-.form__container {
+
+.main-content__container{
+  background-color: $white;
+  border-radius: $padding;
+  padding: 2em;
+  overflow: hidden;
+  margin-inline: 10%;
+  margin-top: 15px;
+
+  .title__call-to-action{
+  font-size: x-large;
   display: flex;
   justify-content: center;
-  margin: 12%;
-
-  label{
-    color: blue;
-    font-weight: 600;
+  font-size: x-large;
+  font-weight: bold;
+  color: $blue;
+  margin-inline: 12%;
   }
 
-
-  input{
+  .form__container {
     display: flex;
-    height: 40px;
-    margin-bottom: 20px;
-    border: solid 2px blue;
-    border-radius: 10px;
-  }
-
-  button{
-    display:flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    color: blue;
-    width: 65%;
-    height: 15%;
-    background: none;
-    border-radius: 10px;
-    font-size: 1.15rem;
-    border: solid 2px;
+    //margin: 12%;
+
+    label{
+      color: $blue;
+      font-weight: 600;
+      font-size: $font-size;
+      text-align: center;
+    }
+
+
+    input{
+      display: flex;
+      height: 40px;
+      margin-bottom: 20px;
+      border: solid 2px $blue;
+      border-radius: 10px;
+      padding: $padding;
+    }
+
+    button{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      color: $blue;
+      width: 65%;
+      height: 15%;
+      background-color: $light-grey;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      
+    }
+    button:hover{
+      background: $dark-grey;
+      border-radius: 12.5px;
+      transition: all 0.2s ease-out ;
+      
+    }
     
   }
-  button:hover{
-    background: $white;
-    border-radius: 12.5px;
-    transition: all 0.2s ease-out ;
-    
-  }
-  
 }

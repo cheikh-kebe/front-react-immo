@@ -20,12 +20,13 @@ export const SignUp = () => {
  };
   return (
     <>
-    <h2>Trouvez la maison de vos rêves! Inscrivez-vous!</h2>
+    <div className="main-content__container">
+    <h2 className="title__call-to-action">Trouvez la maison de vos rêves et inscrivez-vous aujourd'hui !</h2>
     <div className="form__container">
       <div>
       <form /*</div>onSubmit={fetchRegister}*/>
         <label>
-          Email :
+          Email
           <input
           type="text"
           value={email}
@@ -33,7 +34,7 @@ export const SignUp = () => {
         />
         </label>
         <label>
-          Mot de passe:
+          Mot de passe
         <input
           type="password"
           value={password}
@@ -42,6 +43,7 @@ export const SignUp = () => {
         </label>
         <button type="submit" onClick={SignUp}>S'inscrire</button>
       </form>
+    </div>
     </div>
     </div>
     </>
