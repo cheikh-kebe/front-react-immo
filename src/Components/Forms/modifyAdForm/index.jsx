@@ -1,20 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import APIAdsManager from '../../../Services/RailsAPI/AdsFetch';
 import { useHistory} from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
-export const NewAdForm = () => {
+  
+
+export const ModifyAdForm = () => {
+  const { annonceSlug } = useParams();
+
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
-  const [image, setImage] = useState(undefined)
+  const [id, setId] = useState("");
+  const [image, setImage] = useState("");
+   useEffect(() => {
+     getData()
+ });
+
+ const getData = async() => {
+  const {data} = await APIAdsManager.getAds(annonceSlug)
+  console.log(data)
+  setTitle(data.title)
+  setDescription(data.description)
+  setPrice(data.price)
+  setCity(data.city)
+  setId(data.id)
+  setImage(data.image)
+   }
+ 
   const history = useHistory();
-  const CreateAd = async (e) => {
+
+  const UpdateAd = async (e) => {
     e.preventDefault();
-    const response = await APIAdsManager.createRealEstateAd(title,description, price, city, image);
+    const response = await APIAdsManager.updateRealEstateAd(id,title,description, price, city, image);
     Promise.resolve(response)
-    history.push(`/annonces/${response.data.id}`)
+    history.push(`/annonces/${id}`)
  };
+
+
   return (
     <div>
       <div className="form__container">
@@ -59,7 +84,7 @@ export const NewAdForm = () => {
           onChange={(e) => setImage(e.target.files[0])}
         />
         </label>
-        <button onClick={CreateAd} >Créer l'annonce</button>
+        <button onClick={UpdateAd}>Modifier l'annonce</button>
     </form>
     </div>
     </div>
