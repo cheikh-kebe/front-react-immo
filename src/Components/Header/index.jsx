@@ -16,7 +16,6 @@ const Header = () => {
     dispatch(RegisterUserLogoutStatus())
     const response = await APIManager.logout();
     console.log(response)
-    
     history.push('/')
    ;
    }
