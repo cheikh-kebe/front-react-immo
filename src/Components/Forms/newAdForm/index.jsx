@@ -13,7 +13,7 @@ export const NewAdForm = () => {
     e.preventDefault();
     const response = await APIAdsManager.createRealEstateAd(title,description, price, city, image);
     Promise.resolve(response)
-    history.push(`/annonces/${response.data.id}`)
+    history.push(`/mes_annonces`)
  };
   return (
     <div>

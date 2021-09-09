@@ -36,7 +36,7 @@ export const ModifyAdForm = () => {
     e.preventDefault();
     const response = await APIAdsManager.updateRealEstateAd(id,title,description, price, city, image);
     Promise.resolve(response)
-    history.push(`/annonces/${id}`)
+    history.push(`/mes_annonces`)
  };
 
 
