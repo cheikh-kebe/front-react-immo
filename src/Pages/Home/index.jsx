@@ -44,7 +44,7 @@ const Home = () => {
               <Link to={`/annonces/${estate.id}`}>
                 <PreviewAdd estate = {estate}/>
               </Link>
-          </li>
+            </li>
           ))}
         </ul>
       </div>
