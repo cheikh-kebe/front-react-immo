@@ -19,7 +19,7 @@ const DoubleSlider = ({ allEstateToDisplay, setAllEstateToDisplay }) => {
     console.log('onAfterChange: ', value);
     setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
     console.log(ads);
-    setAllEstateToDisplay(ads);
+    // setAllEstateToDisplay(ads);
   }, [ads])
 
   return (
