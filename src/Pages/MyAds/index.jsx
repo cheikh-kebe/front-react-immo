@@ -8,7 +8,7 @@ import { useSelector} from 'react-redux';
 export const MyAds = () => {
 //const history = useHistory()
   const [ads, setAds] =  useState("");
-  const {data} = GetAds('http://localhost:3000/real_estate_ads/my_ads')
+  const {data} = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/my_ads')
   const userId = useSelector(state => state.user.id)
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import './add.scss'
 
 const AdShow = () => {
   const { annonceSlug } = useParams();
-  const {data} = GetAds('http://localhost:3000/real_estate_ads/' + annonceSlug)
+  const {data} = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/' + annonceSlug)
   return (
     <div className="container__add--show">
       {data && <div>
