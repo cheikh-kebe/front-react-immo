@@ -9,13 +9,18 @@ const AdShow = () => {
   return (
     <div className="container__add--show">
       {data && <div>
-        <div><img src={data.image_path} alt="illustrating this real estate listing"></img></div>
-        <h1>{data.title}</h1>
+        <div><img src={data.image_path} alt= "this real estate listing" ></img></div>
         <div className= "content--text">
-          <p className="price">{data.price}€</p>
-          <p>{data.description}</p>
-          <p>{data.email}</p>
-          <em>{data.city}</em>
+          <div className="summary">
+            <h1 className="title">{data.title}</h1>
+            <span className="city">{data.city}</span>
+          </div>
+          <span className="price">{data.price}€</span>
+          <span className="description">{data.description}</span>
+          <div className="contact">
+            <label>prenez contact</label>
+            <div className="email">{data.email}</div>
+          </div>
           </div>
       </div>}
     </div>
