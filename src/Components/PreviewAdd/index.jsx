@@ -3,7 +3,7 @@ import '../PreviewAdd/previewAdd.scss';
 
 const PreviewAdd = ({estate}) => {
 
-  console.log(estate.image_path)
+//  console.log(estate.image_path)
   return (
     <div className="container__add--preview">
       <div className="head--img">

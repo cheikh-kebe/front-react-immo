@@ -16,7 +16,13 @@ const DoubleSlider = () => {
   //  console.log('onChange: ', value);
   // };
 
-  
+  //const onAfterChange = useCallback(value => {
+  //  setAds(allEstateToDisplay);
+  //  console.log('onAfterChange: ', value);
+  //  setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
+  //  console.log(ads);
+  //  // setAllEstateToDisplay(ads);
+  //}, [ads])
 
   return (
     <div className="container__slider">

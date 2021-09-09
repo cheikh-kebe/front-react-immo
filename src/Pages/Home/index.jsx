@@ -15,14 +15,13 @@ import { FilterContext } from '../../Context/FilterContext';
 const Home = () => {
   const { data } = GetAds('http://localhost:3000/real_estate_ads') //error, loading
   
-  const [allEstate, setAllEstate] = useState([]);
   const [allEstateToDisplay, setAllEstateToDisplay] = useState([]);
   const [ads, setAds] = useState([]);
   
   useEffect(() => {
-    setAllEstate(data);
-    setAllEstateToDisplay(allEstate);
-  }, [data, allEstate]);
+    setAllEstateToDisplay(data);
+    setAds(data);
+  }, [data]);
   
   useEffect(() => {
     setAds(allEstateToDisplay);
@@ -43,7 +42,7 @@ const Home = () => {
         <HeroBanner />
         <FilterSystem />
         <ul className="container__all__adds--preview">
-          {allEstateToDisplay && allEstateToDisplay.sort((a, b) => a.price - b.price).map((estate) => (
+          {ads && ads.sort((a, b) => a.price - b.price).map((estate) => (
             <li key = {estate.id}>
               <Link to={`/annonces/${estate.id}`}>
                 <PreviewAdd estate = {estate}/>
