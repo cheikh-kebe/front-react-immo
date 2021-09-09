@@ -1,14 +1,16 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import { Link } from 'react-router-dom';
 import PreviewAdd from '../../Components/PreviewAdd';
+import { useSelector} from 'react-redux';
+//api
+import { API_URL } from '../../Config/config';
 import GetAds from '../../Services/RailsAPI/GetAds';
 import APIAdsManager from '../../Services/RailsAPI/AdsFetch';
-import { useSelector} from 'react-redux';
 
 export const MyAds = () => {
 //const history = useHistory()
   const [ads, setAds] =  useState("");
-  const {data} = GetAds('http://localhost:3000/real_estate_ads/my_ads')
+  const {data} = GetAds(API_URL+'/real_estate_ads/my_ads')
   const userId = useSelector(state => state.user.id)
 
   useEffect(() => {
