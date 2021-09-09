@@ -13,7 +13,7 @@ import GetAds from '../../Services/RailsAPI/GetAds';
 import { FilterContext } from '../../Context/FilterContext';
 
 const Home = () => {
-  const { data } = GetAds('https://front-react-immo.herokuapp.com/real_estate_ads') //error, loading
+  const { data } = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/') //error, loading
   const [allEstateToDisplay, setAllEstateToDisplay] = useState([]);
   const [ads, setAds] = useState([]);
   
