@@ -9,9 +9,7 @@ import './Styles/main.scss';
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import Add from "./Pages/Add";
-import Page1 from "./Pages/Page1";
-import Page2 from "./Pages/Page2";
-import Page3 from "./Pages/Page3";
+
 import Footer from "./Components/Footer";
 import { SignupPage } from "./Pages/SignUpPage";
 import { SignInPage } from "./Pages/SignInPage";
@@ -21,6 +19,9 @@ import { PersistGate } from 'redux-persist/integration/react'
 import {useSelector} from 'react-redux';
 import NewAd from "./Pages/NewAd";
 import { MyAds} from "./Pages/MyAds";
+import ModifyAd from "./Pages/ModifyAd";
+
+
 const App = () => {
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -49,12 +50,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <main className="main__content">
           <Switch>
             <PrivateRoute path="/nouvelle_annonce" component={NewAd} />
+        
             <PrivateRoute path="/mes_annonces" component={MyAds} />
+            <PrivateRoute path="/annonces/:annonceSlug/modification" component={ModifyAd} />
             <Route path="/" exact render={() => <Home/>}/>
             <Route path="/annonces/:annonceSlug" render={() => <Add key={uuidv4()}/>}/>
-            <Route path="/page1" render={() => <Page1/>}/>
-            <Route path="/page2" render={() => <Page2/>}/>
-            <Route path="/page3" render={() => <Page3/>}/>
+            
             <Route path="/sign_up" render={() => <SignupPage/>}/>
             <Route path="/sign_in" render={() => <SignInPage/>}/>
           </Switch>

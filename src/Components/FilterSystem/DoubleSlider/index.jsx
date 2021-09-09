@@ -1,26 +1,28 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useContext} from 'react';
 import 'antd/dist/antd.css';
 import { Slider } from 'antd';
 import '../DoubleSlider/doubleSlider.scss';
+import { FilterContext } from '../../../Context/FilterContext';
 
-const DoubleSlider = ({ allEstateToDisplay, setAllEstateToDisplay }) => {
-  const [ads, setAds] = useState([]);
 
-  useEffect(() => {
-    setAds(allEstateToDisplay);
-  }, [allEstateToDisplay]);
+const DoubleSlider = () => {
+  
+  const {onAfterChange} = useContext(FilterContext)
+
+  
+  
 
   // const onChange = (value) => {
   //  console.log('onChange: ', value);
   // };
 
-  const onAfterChange = useCallback(value => {
-    setAds(allEstateToDisplay);
-    console.log('onAfterChange: ', value);
-    setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
-    console.log(ads);
-    setAllEstateToDisplay(ads);
-  }, [ads])
+  //const onAfterChange = useCallback(value => {
+  //  setAds(allEstateToDisplay);
+  //  console.log('onAfterChange: ', value);
+  //  setAds(ads => ads.filter((estate) => estate.price >= value[0] && estate.price <= value[1]));
+  //  console.log(ads);
+  //  // setAllEstateToDisplay(ads);
+  //}, [ads])
 
   return (
     <div className="container__slider">
