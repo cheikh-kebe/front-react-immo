@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import APIAdsManager from '../../../Services/RailsAPI/AdsFetch';
+import '../modifyAdForm/modifyadform.scss';
 import { useHistory} from "react-router-dom";
 import { useParams } from 'react-router-dom';
 
@@ -41,53 +42,56 @@ export const ModifyAdForm = () => {
 
 
   return (
-    <div>
+    <>
+    <div className="main-content__container">
+      <h2 className="title__call-to-action">Modifier mon annonce</h2>
       <div className="form__container">
-      <form>
-        <label>
-          Titre :
+        <form>
+          <label>
+            Titre
+            <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          </label>
+          <label>
+            Description
+            <input
+            type="text"
+            value={description}
+            onChange={(e)=>setDescription(e.target.value)}
+          />
+          </label>
+          <label>
+            Prix de vente
+            <input
+            type="number"
+            value={price}
+            onChange={(e)=>setPrice(e.target.value)}
+          />
+          </label>
+          <label>
+            Ville
           <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        </label>
-        <label>
-          Description :
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          </label>
+          <label>
+            Image
           <input
-          type="text"
-          value={description}
-          onChange={(e)=>setDescription(e.target.value)}
-        />
-        </label>
-        <label>
-          Prix de vente :
-          <input
-          type="number"
-          value={price}
-          onChange={(e)=>setPrice(e.target.value)}
-        />
-        </label>
-        <label>
-          Ville :
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        </label>
-        <label>
-          Image :
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
-        </label>
-        <button onClick={UpdateAd}>Modifier l'annonce</button>
-    </form>
+            type="file"
+            accept="image/*"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+          </label>
+          <button onClick={UpdateAd}>sauvegarder</button>
+        </form>
+      </div>
     </div>
-    </div>
+    </>
   );
 }
 
