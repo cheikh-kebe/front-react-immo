@@ -25,7 +25,7 @@ const GetAds = (URL) => {
         }
       }
       fetchData();
-    },[])
+    },[URL, token])
     return  {data} 
 }
 

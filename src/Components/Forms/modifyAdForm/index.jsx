@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import APIAdsManager from '../../../Services/RailsAPI/AdsFetch';
 import { useHistory} from "react-router-dom";
-import GetAds from '../../../Services/RailsAPI/GetAds';
 import { useParams } from 'react-router-dom';
 
   
@@ -18,7 +17,7 @@ export const ModifyAdForm = () => {
   const [image, setImage] = useState("");
    useEffect(() => {
      getData()
- }, []);
+ });
 
  const getData = async() => {
   const {data} = await APIAdsManager.getAds(annonceSlug)

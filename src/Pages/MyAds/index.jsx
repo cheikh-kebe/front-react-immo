@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PreviewAdd from '../../Components/PreviewAdd';
 import GetAds from '../../Services/RailsAPI/GetAds';
 import APIAdsManager from '../../Services/RailsAPI/AdsFetch';
-import { useHistory } from 'react-router';
 import { useSelector} from 'react-redux';
 
 export const MyAds = () => {
@@ -19,7 +18,7 @@ export const MyAds = () => {
   const DeleteAd = useCallback(id => {
     const response = APIAdsManager.deleteRealEstateAd(id)
     setAds(ads=> ads.filter(ad => ad.id !== id));
-  },[ads]); 
+  },[]); 
 
   
   
@@ -35,7 +34,7 @@ export const MyAds = () => {
             <PreviewAdd estate = {estate}/>
           </Link>
           <button value={estate.id} onClick={()=>DeleteAd(estate.id)}> supprimer</button>
-          {userId == estate.user_id?
+          {userId === estate.user_id?
           <Link to={`/annonces/${estate.id}/modification`}>
             <button value={estate.id}> modifier</button>
           </Link>

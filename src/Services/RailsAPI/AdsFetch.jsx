@@ -27,11 +27,11 @@ export default class APIAdsManager {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
     };
-    var data = new FormData();
+    let data = new FormData();
     data.append('title',title);
     data.append('description',description);
     data.append('price',price);
-    data.append('image', image)
+    if (image)(data.append('image', image))
     data.append('city',city);
   
 
@@ -50,7 +50,7 @@ export default class APIAdsManager {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
     };
-    var data = new FormData();
+    let data = new FormData();
     data.append('title',title);
     data.append('description',description);
     data.append('price',price);

@@ -7,7 +7,7 @@ export const NewAdForm = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
-  const [image, setImage] = useState("")
+  const [image, setImage] = useState(undefined)
   const history = useHistory();
   const CreateAd = async (e) => {
     e.preventDefault();
