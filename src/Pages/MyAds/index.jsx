@@ -10,7 +10,9 @@ import APIAdsManager from '../../Services/RailsAPI/AdsFetch';
 export const MyAds = () => {
 //const history = useHistory()
   const [ads, setAds] =  useState("");
-  const {data} = GetAds(API_URL+'/real_estate_ads/my_ads')
+
+  const {data} = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/my_ads')
+
   const userId = useSelector(state => state.user.id)
 
   useEffect(() => {

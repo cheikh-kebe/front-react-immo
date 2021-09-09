@@ -15,7 +15,9 @@ import { API_URL } from '../../Config/config';
 import { FilterContext } from '../../Context/FilterContext';
 
 const Home = () => {
-  const { data } = GetAds(API_URL+'/real_estate_ads') //error, loading
+
+  const { data } = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/') //error, loading
+
   const [allEstateToDisplay, setAllEstateToDisplay] = useState([]);
   const [ads, setAds] = useState([]);
   

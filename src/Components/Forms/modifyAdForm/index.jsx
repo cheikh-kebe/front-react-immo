@@ -17,7 +17,7 @@ export const ModifyAdForm = () => {
   const [image, setImage] = useState("");
    useEffect(() => {
      getData()
- });
+ },[annonceSlug]);
 
  const getData = async() => {
   const {data} = await APIAdsManager.getAds(annonceSlug)

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import Cookies from "js-cookie";
+
 const GetAds = (URL) => {
     const [data, setData] = useState(null);
     const token = Cookies.get('token')
+    
     useEffect(() => {
       const fetchData = async() => {
         try {

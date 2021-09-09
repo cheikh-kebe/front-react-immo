@@ -7,7 +7,9 @@ import GetAds from '../../Services/RailsAPI/GetAds';
 
 const AdShow = () => {
   const { annonceSlug } = useParams();
-  const {data} = GetAds(API_URL+'/real_estate_ads/'+ annonceSlug)
+
+  const {data} = GetAds('https://api-immocoin.herokuapp.com/real_estate_ads/' + annonceSlug)
+
   return (
     <div className="container__add--show">
       {data && <div>
