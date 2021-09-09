@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './header.scss'
 import { useDispatch, useSelector} from 'react-redux';
-import { RegisterUserLoginStatus,RegisterUserLogoutStatus } from "../../Store";
+import {RegisterUserLogoutStatus } from "../../Store";
 import { useHistory} from "react-router-dom";
 import APIManager from "../../Services/RailsAPI/UsersFetch.jsx";
   
@@ -13,9 +13,10 @@ const Header = () => {
   const dispatch = useDispatch()
   const logout = async (e) => {
     e.preventDefault();
+    dispatch(RegisterUserLogoutStatus())
     const response = await APIManager.logout();
     console.log(response)
-    response.status === 200? dispatch(RegisterUserLogoutStatus()):dispatch(RegisterUserLoginStatus());
+    
     history.push('/')
    ;
    }
@@ -25,7 +26,7 @@ const Header = () => {
       <ul>
         {isLogged?
         <>
-        <li><Link to="/nouvelle_annonce">Ajouter une annonce </Link></li>
+        
         <li><Link to="/mes_annonces">Mes annonces </Link></li>
         <button type="submit" onClick={logout}>Se déconnecter</button>
         </>

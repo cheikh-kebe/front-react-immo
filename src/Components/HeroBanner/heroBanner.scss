@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.container__heroBanner {
+  width: 100%;
+  aspect-ratio: 3/1;
+  background-color: $blue;
+  color: $white;
+  display: grid;
+  place-items: center;
+
+  .container__text {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: $big-font-size * 2;
+  }
+}
