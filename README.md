@@ -15,7 +15,7 @@ and run:
 
 `rails db:create db:migrate db:seed`
 
-`rails s (on localhost:3000)`
+`rails s` (on localhost:3000)
 
 
 Then, for this repo run:
