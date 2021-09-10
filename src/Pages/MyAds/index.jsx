@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import PreviewAdd from '../../Components/PreviewAdd';
 import { useSelector} from 'react-redux';
 //api
-import { API_URL } from '../../Config/config';
+import { API_URL } from '../../Config';
 import GetAds from '../../Services/RailsAPI/GetAds';
 import APIAdsManager from '../../Services/RailsAPI/AdsFetch';
+//styles
+import './MyAds.scss'
 
 export const MyAds = () => {
 //const history = useHistory()

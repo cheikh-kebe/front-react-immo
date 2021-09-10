@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './add.scss' 
 //api
-import { API_URL } from '../../Config/config';
+import { API_URL } from '../../Config';
 import GetAds from '../../Services/RailsAPI/GetAds';
 
 const AdShow = () => {

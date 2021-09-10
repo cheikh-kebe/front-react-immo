@@ -10,7 +10,7 @@ import PreviewAdd from '../../Components/PreviewAdd';
 import './home.scss';
 //api
 import GetAds from '../../Services/RailsAPI/GetAds';
-import { API_URL } from '../../Config/config';
+import { API_URL } from '../../Config';
 //context
 import { FilterContext } from '../../Context/FilterContext';
 

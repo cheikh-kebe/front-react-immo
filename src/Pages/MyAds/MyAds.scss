@@ -1,0 +1,23 @@
+@import '../../Styles/variables';
+
+.container__home{
+  
+
+  h3{
+    font-size: 1.5rem;
+  }
+
+  button{
+    display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      margin-right: 5%;
+      color: $blue;
+      width: 20%;
+      height: 5%;
+      background-color: $light-grey;
+      border-radius: 10px;
+      font-size: 1.15rem;
+  }
+}

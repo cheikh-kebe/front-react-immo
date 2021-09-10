@@ -11,6 +11,7 @@ const Header = () => {
   const isLogged = useSelector(state => state.user.isLogged)
   const history = useHistory();
   const dispatch = useDispatch()
+
   const logout = async (e) => {
     e.preventDefault();
     dispatch(RegisterUserLogoutStatus())
@@ -25,9 +26,10 @@ const Header = () => {
       <ul>
         {isLogged?
         <>
-        
+        <li>Bienvenue sur ImmoCoin</li>
         <li><Link to="/mes_annonces">Mes annonces </Link></li>
         <button type="submit" onClick={logout}>Se déconnecter</button>
+        
         </>
         :
         <>

@@ -1,4 +1,4 @@
-import { API_URL } from "../../Config/config";
+import { API_URL } from "../../Config";
 import Cookies from "js-cookie";
 import axios from "axios";
 
