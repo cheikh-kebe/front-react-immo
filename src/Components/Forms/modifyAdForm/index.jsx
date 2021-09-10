@@ -7,8 +7,6 @@ import { useParams } from 'react-router-dom';
 
 export const ModifyAdForm = () => {
   const { annonceSlug } = useParams();
-
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
