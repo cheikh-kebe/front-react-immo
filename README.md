@@ -1,6 +1,6 @@
 # Welcome to the immoCoin Project ! 
 
-Not to be confused with leboncoin /!\ We only offer high-end housing on our site ;)
+Not to be confused with leboncoin /!\ We exclusively offer high-end housing on this site. :D
 
 It's a react and rails training project we completed for the online course The Hacking Project. You can check it out here:
 https://front-react-immo.herokuapp.com/
