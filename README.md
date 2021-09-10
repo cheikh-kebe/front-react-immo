@@ -3,12 +3,13 @@
 Not to be confused with leboncoin /!\ We exclusively offer high-end housing on this site. :D
 
 It's a react and rails training project we completed for the online course The Hacking Project. You can check it out here:
+
 https://front-react-immo.herokuapp.com/
 
 
 __or deploy from your localhost:__
 
-Install this repo for the API: shanksthered/api-immo
+Install this repo for the API [our api] (https://github.com/shanksthered/api-immo)
 and run:
 
 `bundle install`
