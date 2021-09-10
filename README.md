@@ -9,7 +9,7 @@ https://front-react-immo.herokuapp.com/
 
 __or deploy from your localhost:__
 
-Install this repo for the API [our api] (https://github.com/shanksthered/api-immo)
+Install [our api](https://github.com/shanksthered/api-immo)
 and run:
 
 `bundle install`
